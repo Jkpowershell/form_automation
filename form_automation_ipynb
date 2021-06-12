@@ -1,0 +1,44 @@
+
+!apt update
+!apt install chromium-chromedriver
+!apt install chromium-browser
+!apt install -y python3-pyvirtualdisplay
+!apt upgrade
+!pip install selenium
+
+
+from selenium import webdriver
+from pyvirtualdisplay import Display
+import time
+
+option = webdriver.ChromeOptions()
+option.add_argument("--headless")
+option.add_argument("--disable-gpu")
+option.add_argument('--no-sandbox')
+
+chromedriver_location = "/usr/bin/chromedriver"
+
+driver = webdriver.Chrome(chromedriver_location,options=option)
+driver.get("https://docs.google.com/forms/d/e/1FAIpQLSd_hQda2qwpCHed4uNiXPWQGWyyMMk2hnn4hLZvyb9Usnh9sQ/viewform?usp=sf_link")
+
+
+
+radiobuttons = driver.find_elements_by_class_name("docssharedWizToggleLabeledLabelWrapper")
+
+submitbutton = driver.find_element_by_class_name("appsMaterialWizButtonPaperbuttonContent")
+
+print("class found successfully")
+
+print ("The list is : " + str(radiobuttons))
+counter = 0
+for i in radiobuttons:
+  counter = counter + 1
+print ("Length of list using naive method is : " + str(counter))
+
+
+radiobuttons[1].click()
+radiobuttons[3].click()
+
+submitbutton.click()
+
+print("process done successfully")
