@@ -1,4 +1,5 @@
-
+#referring to this website
+#https://medium.com/swlh/automatically-filling-multiple-responses-into-a-google-form-with-selenium-and-python-176340c5220d
 !apt update
 !apt install chromium-chromedriver
 !apt install chromium-browser
@@ -29,6 +30,8 @@ submitbutton = driver.find_element_by_class_name("appsMaterialWizButtonPaperbutt
 
 print("class found successfully")
 
+#https://www.kite.com/python/answers/how-to-get-the-indices-of-all-occurrences-of-an-element-in-a-list-in-python
+#to find the indexes of the data that you want to input in
 print ("The list is : " + str(radiobuttons))
 counter = 0
 for i in radiobuttons:
