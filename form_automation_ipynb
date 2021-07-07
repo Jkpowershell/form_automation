@@ -20,7 +20,7 @@ option.add_argument('--no-sandbox')
 chromedriver_location = "/usr/bin/chromedriver"
 
 driver = webdriver.Chrome(chromedriver_location,options=option)
-driver.get("https://docs.google.com/forms/d/e/1FAIpQLSd_hQda2qwpCHed4uNiXPWQGWyyMMk2hnn4hLZvyb9Usnh9sQ/viewform?usp=sf_link")
+driver.get("your_form_link")
 
 
 
